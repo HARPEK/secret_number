@@ -34,12 +34,12 @@ secret_number = 6
 
 
 puts "                 (: NUMBER·GUESS :)"
-puts " "
+puts 
 puts "                     Created by:"
 puts "                    Kemeya Harper"
-puts " "
-puts "...................................................."
-puts " "
+
+puts "\n....................................................\n"
+
 puts "Before the game begins, start by entering your name."
 player_name = gets.strip
 
@@ -48,63 +48,57 @@ puts " "
 puts "Hello #{player_name}! Playing is easy... You have 3 chances to"
 puts "guess what the secret number is. Your guesses should"
 puts "be between 1 and 10."
-puts " "
 
+puts "\n....................................................\n"
 
 puts "What is your first guess?"
-guess = gets.chomp.to_i
+guess = gets.strip.to_i
 attempts = 3
 
-unless guess == secret_number
-  if guess < secret_number
-    puts "Sorry, your number is too low."
-    attempts -= 1
-  elsif guess > secret_number
-    puts "Sorry, your number is too high."
-    attempts -= 1
-  end
-  if guess == secret_number
-    then puts "YEE HOO! You guessed the secret number on your first try!"
-    attempts -= 2
-  end
+if guess < secret_number
+  puts "Sorry, your number is too low."
+  attempts -= 1
+elsif guess > secret_number
+  puts "Sorry, your number is too high."
+  attempts -= 1
+else
+  puts "YEE HOO!! You guessed the secret number on your first try!"
+  exit
 end
-puts " "
-puts " "
+
+puts "\n....................................................\n"
+
 puts "What is your second guess?"
 guess = gets.chomp.to_i
 attempts = 2
-unless guess == secret_number
-  if guess < secret_number
-    puts "Sorry, your number is too low."
-    attempts -= 1
-  elsif guess > secret_number
-    puts "Sorry, your number is too high."
-    attempts -= 1
-  end
-  if guess == secret_number
-    then puts "YEE HOO! You guessed the secret number on your second try!"
-    attempts -= 2
-  end
+if guess < secret_number
+  puts "Sorry, your number is too low."
+  attempts -= 1
+elsif guess > secret_number
+  puts "Sorry, your number is too high."
+  attempts -= 1
+else
+  puts "Gnarly! You guessed the secret number on your second try!"
+  exit
 end
-puts " "
-puts " "
+
+puts "\n....................................................\n"
+
 puts "What is your final guess?"
 guess = gets.chomp.to_i
 attempts = 0
-unless guess == secret_number
-  if guess < secret_number
-    puts "Sorry, your number is too low. Better luck next time!"
-    attempts -= 1
-  elsif guess > secret_number
-    puts "Sorry, your number is too high. Better luck next time!"
-    attempts -= 1
-  end
-  if guess == secret_number
-    then puts "YEE HOO! You guessed the secret number!"
-    attempts -= 2
-  end
+if guess < secret_number
+  puts "Sorry, your number is too low. Better luck next time!"
+  attempts -= 1
+elsif guess > secret_number
+  puts "Sorry, your number is too high. Better luck next time!"
+  attempts -= 1
+else
+  puts "Yay - you guessed the secret number!"
+  exit
 end
 
+puts "\n....................................................\n"
 
 
 
