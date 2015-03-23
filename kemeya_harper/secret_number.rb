@@ -30,7 +30,7 @@
 #
 ###############################################################################
 
-secret_number = 9
+secret_number = 6
 
 
 puts "                 (: NUMBER·GUESS :)"
@@ -64,11 +64,12 @@ unless guess == secret_number
     attempts -= 1
   end
   if guess == secret_number
-    then puts "YEE HOO! You guessed the secret number!"
+    then puts "YEE HOO! You guessed the secret number on your first try!"
     attempts -= 2
   end
 end
-
+puts " "
+puts " "
 puts "What is your second guess?"
 guess = gets.chomp.to_i
 attempts = 2
@@ -81,20 +82,21 @@ unless guess == secret_number
     attempts -= 1
   end
   if guess == secret_number
-    then puts "YEE HOO! You guessed the secret number!"
+    then puts "YEE HOO! You guessed the secret number on your second try!"
     attempts -= 2
   end
 end
-
+puts " "
+puts " "
 puts "What is your final guess?"
 guess = gets.chomp.to_i
 attempts = 0
 unless guess == secret_number
   if guess < secret_number
-    puts "Sorry, your number is too low."
+    puts "Sorry, your number is too low. Better luck next time!"
     attempts -= 1
   elsif guess > secret_number
-    puts "Sorry, your number is too high."
+    puts "Sorry, your number is too high. Better luck next time!"
     attempts -= 1
   end
   if guess == secret_number
